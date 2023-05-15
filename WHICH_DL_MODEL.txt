@@ -1,3 +1,4 @@
 DL MODELS and NOTEBOOKS
 
-2.1 egştş amacli: sentetik: Regressor
+2.1 ANN-Regression - (deneme amacli overfitting icin LR-earlystop-dropout)
+2.2 ANN-Classification (optuna - earlystop-dropout-cross val)
