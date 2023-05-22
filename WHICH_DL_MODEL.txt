@@ -1,4 +1,31 @@
 DL MODELS and NOTEBOOKS
 
-2.1 ANN-Regression - (deneme amacli overfitting icin LR-earlystop-dropout)
-2.2 ANN-Classification (optuna - earlystop-dropout-cross val)
+2.1 ANN-Regression - (deneme amacli overfitting icin LR-earlystop-dropout-AYNI BOYUT FOTO)
+2.2 ANN-Classification (optuna - earlystop-dropout-learninng rate-cross val-AYNI BOYUT FOTO)
+3.1 CNN- Multiclassification - grayscaled - 1 channel -AYNI BOYUT FOTO
+3.2 CNN- Balanced Multiclassification - coloured - 3 channel -AYNI BOYUT FOTO
+
+Su ana kadarki image boyutları kucuk olduğu icin filter 3x3 boyutlu kullannildi. Büyük boyutlu imagelarda ilk convolutional layerlarda 11x11 veya 9x9 kullanılabilir. Ama best practice, conv layerlarda sonlara doğru, yani flatten doğru filter boyutunu 3x3 olacak sekilde ayarlamak. Ana amac sonlara doğru detay kaybetmeme hedefi; 11x11de pixel kaybı sozkonusu ama 3x3te detaylara da hakim.
+
+3.3 CNN - Balanced binary classification (coloured - FARKLI BOYUTTA FOTOLAR - image data generator)
+
+4 CNN - Balanced binary classification (coloured - farklı boyut - Im data gen)
+
+# overfitting
+    - early stop
+    - drop out
+    - reduce patience (especially CNN)
+    - learning rate
+    - batch normalization
+    - Image data generator for CNN (3.3) (data augmentation)
+	- İmage size çok büyük secilirse (örnek 300x300) overfttşnge goturebilir 
+    
+
+* Imbalanced dataset:
+    - class weight (sklearn): first check&compare scores for each classes. If scores points to an imbalanced data, then increase the weight of the class with lower scores
+    -  make_scorer for multiclass
+    - Update optuna to max the recall of the class with lower scores
+    -  y_pred = pred_prob > 50 yerine 0.35 yapabiliriz ornegin.
+Ama bunlari yaparken recall ve precision dengesini de dikkate almak gerekir. Datanin hassasiyetine göre kullanacagimiz metric ve/veya yöntem de değisecektir. Cnn ve Ann'deki yontemler ayni
+
+
