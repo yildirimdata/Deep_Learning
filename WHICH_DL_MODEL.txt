@@ -1,17 +1,19 @@
 DL MODELS and NOTEBOOKS
 
 2.1 ANN-Regression - (deneme amacli overfitting icin LR-earlystop-dropout-AYNI BOYUT FOTO)
-2.2 ANN-Classification (optuna - earlystop-dropout-learninng rate-cross val-AYNI BOYUT FOTO)
+2.2 ANN- Balanced Classification (optuna - earlystop-dropout-learninng rate-cross val-AYNI BOYUT FOTO)
+2.3 ANN- Imbalanced Binary Classification (optuna - 
 3.1 CNN- Multiclassification - grayscaled - 1 channel -AYNI BOYUT FOTO
 3.2 CNN- Balanced Multiclassification - coloured - 3 channel -AYNI BOYUT FOTO
 
 Su ana kadarki image boyutları kucuk olduğu icin filter 3x3 boyutlu kullannildi. Büyük boyutlu imagelarda ilk convolutional layerlarda 11x11 veya 9x9 kullanılabilir. Ama best practice, conv layerlarda sonlara doğru, yani flatten doğru filter boyutunu 3x3 olacak sekilde ayarlamak. Ana amac sonlara doğru detay kaybetmeme hedefi; 11x11de pixel kaybı sozkonusu ama 3x3te detaylara da hakim.
 
 3.3 CNN - Balanced binary classification (coloured - FARKLI BOYUTTA FOTOLAR - image data generator)
+3.4 CNN - Multiclass classification (grayscaled - ayni boyutta fotolar)
 
 4 CNN - Balanced binary classification (coloured - farklı boyut - Im data gen)
 
-# overfitting
+# How to dela with overfitting in DL
     - early stop
     - drop out
     - reduce patience (especially CNN)
@@ -21,7 +23,8 @@ Su ana kadarki image boyutları kucuk olduğu icin filter 3x3 boyutlu kullannild
 	- İmage size çok büyük secilirse (örnek 300x300) overfttşnge goturebilir 
     
 
-* Imbalanced dataset:
+* How to deal with Imbalanced dataset:
+
     - class weight (sklearn): first check&compare scores for each classes. If scores points to an imbalanced data, then increase the weight of the class with lower scores
     -  make_scorer for multiclass
     - Update optuna to max the recall of the class with lower scores
